@@ -10,7 +10,6 @@ export function makeServer({ environment = 'test' } = {}) {
 		 * If it is set to development, it will load the seeds and log all its responses to the console.
 		 */
 		environment,
-
 		models: {
 			notes: Model,
 		},
@@ -82,7 +81,7 @@ export function makeServer({ environment = 'test' } = {}) {
 			});
 
 			// Delete an existing note record
-			this.delete((schema, request) => {
+			this.delete('/:id', (schema, request) => {
 				const id = request.params.id;
 				return schema.notes.find(id).destroy();
 			});

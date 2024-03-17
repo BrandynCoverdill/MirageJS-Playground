@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 
 const Home = lazy(() => import('../pages/Home'));
 const NotFound = lazy(() => import('../pages/NotFound'));
+const Notes = lazy(() => import('../pages/Notes'));
 
 function App() {
 	return (
