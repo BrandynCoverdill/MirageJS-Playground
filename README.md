@@ -1,8 +1,7 @@
-# React + Vite
+# MirageJS Playground
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a playground to test around with the MirageJS library.
 
-Currently, two official plugins are available:
+## What is Mirage JS?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Mirage JS is an API mocking library that lets you buil, test, and share a complete working JavaScript application without having to reply on any backend services.
