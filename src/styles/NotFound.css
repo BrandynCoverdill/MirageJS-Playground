@@ -1,0 +1,13 @@
+.not-found {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-block-start: 5em;
+	gap: 1em;
+}
+
+.not-found a {
+	text-decoration: none;
+	font-size: 1.25em;
+}

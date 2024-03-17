@@ -1,0 +1,19 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+body * {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin-inline: 10px;
+	background-color: #ddd;
+	font-family: 'Saira', sans-serif;
+}
+
+body::after,
+body::before {
+	margin: 0;
+	padding: 0;
+}
