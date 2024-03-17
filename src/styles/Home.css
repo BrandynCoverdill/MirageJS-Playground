@@ -1,0 +1,13 @@
+.home {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	justify-content: center;
+	align-items: center;
+	margin-block-start: 4em;
+}
+
+.home a {
+	text-decoration: none;
+	font-size: 1.25em;
+}
