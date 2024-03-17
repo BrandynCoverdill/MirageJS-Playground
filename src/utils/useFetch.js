@@ -8,7 +8,7 @@ export default function useFetch() {
 			try {
 				const response = await fetch('/api/notes');
 				const json = await response.json();
-				setData(json);
+				setData(json.notes);
 			} catch (e) {
 				console.error('Error fetching data: ' + e);
 			}

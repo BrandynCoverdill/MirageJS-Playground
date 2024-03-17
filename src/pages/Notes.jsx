@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useFetch from '../utils/useFetch';
 import '../styles/Notes.css';
 
@@ -9,8 +10,15 @@ export default function Notes() {
 			{data === null ? (
 				<p>Loading data...</p>
 			) : (
-				data.notes.map((note) => <p key={note.id}>{note.title}</p>)
+				data.map((note) => (
+					<section className='note-links'>
+						<Link to={note.id} key={note.id}>
+							{note.title}
+						</Link>
+					</section>
+				))
 			)}
+			<Link to='/'>Back to Homepage</Link>
 		</section>
 	);
 	// TODO
