@@ -1,6 +1,18 @@
+import useFetch from '../utils/useFetch';
 import '../styles/Notes.css';
 
 export default function Notes() {
+	const data = useFetch();
+	return (
+		<section className='notes'>
+			<h2>Notes</h2>
+			{data === null ? (
+				<p>Loading data...</p>
+			) : (
+				data.notes.map((note) => <p key={note.id}>{note.title}</p>)
+			)}
+		</section>
+	);
 	// TODO
 	/**
 	 * 1. Display a list of clickable notes.
