@@ -31,3 +31,7 @@
 	padding-inline: 0.75em;
 	font-weight: bold;
 }
+
+.add-new-note-form .error {
+	color: red;
+}
