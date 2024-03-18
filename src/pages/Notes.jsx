@@ -8,7 +8,7 @@ export default function Notes() {
 		<section className='notes'>
 			<h2>Notes</h2>
 			{data === null ? (
-				<p>Loading data...</p>
+				<p>Loading notes...</p>
 			) : (
 				data.map((note) => (
 					<section className='note-links'>
