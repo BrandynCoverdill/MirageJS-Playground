@@ -1,0 +1,33 @@
+.notes button {
+	margin-block: 0.5em;
+	cursor: pointer;
+}
+
+.notes .back {
+	margin-block-start: 0.5em;
+}
+
+.add-new-note-form {
+	border: 2px solid black;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgb(172, 172, 172);
+	margin-block-end: 1em;
+	padding: 1em;
+}
+
+.add-new-note-form form div {
+	display: flex;
+	flex-direction: column;
+}
+
+.add-new-note-form form div input,
+.add-new-note-form form div textarea {
+	margin-block-end: 1em;
+}
+
+.add-new-note-form button,
+.notes button {
+	padding-block: 0.5em;
+	padding-inline: 0.75em;
+	font-weight: bold;
+}
