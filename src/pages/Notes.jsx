@@ -1,18 +1,25 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import useFetch from '../utils/useFetch';
 import { v4 as uuidv4 } from 'uuid';
 import '../styles/Notes.css';
 
 export default function Notes() {
-	// TODO: Fetched data is null on mount.
-	const fetchedData = useFetch();
-	console.log(fetchedData);
-	const [data, setData] = useState(fetchedData);
-	console.log(data);
+	const [data, setData] = useState([]);
 	const [showNewNote, setShowNewNote] = useState(false);
 	const [title, setTitle] = useState('');
 	const [body, setBody] = useState('');
+
+	useEffect(() => {
+		getNotes();
+	}, []);
+
+	function getNotes() {
+		fetch('/api/notes')
+			.then((response) => response.json())
+			.then((json) => json.notes)
+			.then((data) => setData(data))
+			.catch((e) => console.error('Error fetching notes:' + e));
+	}
 
 	function handleShowNewNote() {
 		setShowNewNote(!showNewNote);
@@ -62,9 +69,7 @@ export default function Notes() {
 				}),
 			}).then(() => {
 				// refresh component with new notes
-				fetch('/api/notes')
-					.then((response) => response.json())
-					.then((json) => setData(json.notes));
+				getNotes();
 			});
 		} catch (error) {
 			console.error('Error creating new note: ' + error);
@@ -118,15 +123,11 @@ export default function Notes() {
 			</button>
 			{showNewNote ? addNewNoteForm() : ''}
 			<h2>Notes</h2>
-			{data === null ? (
-				<p>Loading notes...</p>
-			) : (
-				data.map((note) => (
-					<section className='note-links' key={note.id}>
-						<Link to={note.id}>{note.title}</Link>
-					</section>
-				))
-			)}
+			{data.map((note) => (
+				<section className='note-links' key={note.id}>
+					<Link to={note.id}>{note.title}</Link>
+				</section>
+			))}
 			<div className='back'>
 				<Link to='/' className='back'>
 					Back to Homepage
@@ -136,10 +137,7 @@ export default function Notes() {
 	);
 	// TODO
 	/**
-	 * 1. Display a list of clickable notes.
-	 * 2. Have a form to create a new note record.
-	 * 3. When you are in a note (/notes/1 for example), display the note record.
-	 * 4. Along with the note record above, make it so you can edit it.
-	 * 5. Along with the above, make it so you can delete the note.
+	 * 1. Along with the note record above, make it so you can edit it.
+	 * 2. Along with the above, make it so you can delete the note.
 	 */
 }
