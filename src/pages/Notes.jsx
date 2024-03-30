@@ -139,18 +139,25 @@ export default function Notes() {
 			</button>
 			{showNewNote ? addNewNoteForm() : ''}
 			<h2>Notes</h2>
-			{data.map((note) => (
-				<section className='note-links' key={note.id}>
-					<Link to={note.id}>{note.title}</Link>
-					<button
-						type='button'
-						className='delete-note-btn'
-						onClick={() => handleDeleteNote(note)}
-					>
-						Delete Note
-					</button>
-				</section>
-			))}
+			{data.length === 0 ? (
+				<>
+					<p>No notes avaliable.</p>
+					<p>You can add a new note above.</p>
+				</>
+			) : (
+				data.map((note) => (
+					<section className='note-links' key={note.id}>
+						<Link to={note.id}>{note.title}</Link>
+						<button
+							type='button'
+							className='delete-note-btn'
+							onClick={() => handleDeleteNote(note)}
+						>
+							Delete Note
+						</button>
+					</section>
+				))
+			)}
 			<div className='back'>
 				<Link to='/' className='back'>
 					Back to Homepage
