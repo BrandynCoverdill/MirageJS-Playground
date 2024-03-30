@@ -1,0 +1,30 @@
+.note-details button {
+	display: block;
+	margin-block: 0.5em;
+	cursor: pointer;
+	padding-inline: 0.75em;
+	padding-block: 0.5em;
+	font-weight: bold;
+}
+
+.note-details .note-updating {
+	border: 2px solid black;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgb(172, 172, 172);
+	margin-block-end: 1em;
+	padding: 1em;
+}
+
+.note-details .note-updating form div label {
+	font-weight: bold;
+}
+
+.note-details .note-updating form div input,
+.note-details .note-updating form div textarea {
+	margin-block-end: 1em;
+	width: 100%;
+}
+
+.note-details .note-updating form div p {
+	color: red;
+}

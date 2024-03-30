@@ -32,6 +32,10 @@
 	flex-direction: column;
 }
 
+.add-new-note-form form div label {
+	font-weight: bold;
+}
+
 .add-new-note-form form div input,
 .add-new-note-form form div textarea {
 	margin-block-end: 1em;
