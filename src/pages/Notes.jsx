@@ -116,6 +116,22 @@ export default function Notes() {
 		);
 	}
 
+	function handleDeleteNote(note) {
+		const continueDeletion = confirm(
+			`Are you sure you want to delete ${note.title}`
+		);
+
+		if (continueDeletion) {
+			fetch(`/api/notes/${note.id}`, { method: 'DELETE' })
+				.then((res) => {
+					getNotes();
+				})
+				.catch((error) => {
+					console.error('Unable to delete note: ' + error);
+				});
+		}
+	}
+
 	return (
 		<section className='notes'>
 			<button type='button' onClick={handleShowNewNote}>
@@ -126,6 +142,13 @@ export default function Notes() {
 			{data.map((note) => (
 				<section className='note-links' key={note.id}>
 					<Link to={note.id}>{note.title}</Link>
+					<button
+						type='button'
+						className='delete-note-btn'
+						onClick={() => handleDeleteNote(note)}
+					>
+						Delete Note
+					</button>
 				</section>
 			))}
 			<div className='back'>

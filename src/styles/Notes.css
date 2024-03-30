@@ -3,8 +3,20 @@
 	cursor: pointer;
 }
 
+.notes .delete-note-btn {
+	margin-inline-start: 0.5em;
+	padding-inline: 0.25em;
+	padding-block: 0.25em;
+	font-size: 1em;
+	margin-block: 0em;
+}
+
+.notes .note-links {
+	margin-block: 0.5em;
+}
+
 .notes .back {
-	margin-block-start: 0.5em;
+	margin-block-start: 2em;
 }
 
 .add-new-note-form {
