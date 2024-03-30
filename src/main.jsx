@@ -17,6 +17,11 @@ if (process.env.NODE_ENV === 'development') {
 	makeServer({ environment: 'development' });
 }
 
+// This will make it so when on the production build, it will use mirage js as the mock db.
+if (process.env.NODE_ENV === 'production') {
+	makeServer({ environment: 'production' });
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<App />
